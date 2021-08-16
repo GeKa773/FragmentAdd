@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_view_background_radius">20dp</dimen>
+    <dimen name="small_button_background">180dp</dimen>
+    <dimen name="margin_text_in_button">8dp</dimen>
+    <dimen name="text_size_in_button">24sp</dimen>
+    <dimen name="margin_count_text_view">30dp</dimen>
+    <dimen name="padding_count_text_view">4dp</dimen>
+    <dimen name="notification_icon_dimens">50dp</dimen>
+</resources>

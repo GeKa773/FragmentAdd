@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="sharedViewModel"
+            type="com.gekaradchenko.fragmentadd.SharedViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".CountFragment">
+
+        <TextView
+            android:id="@+id/countTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_count_text_view"
+            android:background="@drawable/custom_text_view_background"
+            android:gravity="center"
+            android:padding="@dimen/padding_count_text_view"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_in_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/minusFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:backgroundTint="@color/small_button_background"
+            android:contentDescription=""
+            android:onClick="@{() -> sharedViewModel.minusFragment()}"
+            android:src="@drawable/ic_baseline_clear"
+            android:tint="@color/background"
+            app:fabGONE="@{sharedViewModel.count}"
+            app:layout_constraintBottom_toBottomOf="@+id/countTextView"
+            app:layout_constraintStart_toStartOf="@+id/countTextView"
+            app:layout_constraintTop_toTopOf="@+id/countTextView"
+            app:layout_constraintVertical_bias="0.533"
+            app:rippleColor="@color/background" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/plusFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:backgroundTint="@color/small_button_background"
+            android:contentDescription=""
+            android:onClick="@{()->sharedViewModel.plusFragment()}"
+            android:src="@drawable/ic_baseline_add"
+            android:tint="@color/background"
+            app:layout_constraintBottom_toBottomOf="@+id/countTextView"
+            app:layout_constraintEnd_toEndOf="@+id/countTextView"
+            app:layout_constraintTop_toTopOf="@+id/countTextView"
+            app:rippleColor="@color/background" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/countTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/custom_button_background" />
+
+        <TextView
+            android:id="@+id/notificationTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin_text_in_button"
+            android:gravity="center"
+            android:text="@string/create_new_notification"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_in_button"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
